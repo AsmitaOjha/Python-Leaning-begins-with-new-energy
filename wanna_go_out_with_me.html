@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #1e97cf;
+    }
+
+    #container {
+      text-align: center;
+    }
+
+    #message {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #dollGif {
+      width: 200px;
+      height: auto;
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #noButton {
+      background-color: #ff6f61;
+      color: #fff;
+    }
+
+    #yesButton {
+      background-color: #5cb85c;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <div id="message">Do you wanna go out with me?</div>
+  <img id="dollGif" src="pleasee.gif" alt="Cute Doll Saying Please">
+  <br>
+  <button id="yesButton" class="button" onclick="onYesClick()">Yes</button>
+  <button id="noButton" class="button" onclick="onNoClick()">No</button>
+</div>
+
+<script>
+  function onNoClick() {
+    var noButton = document.getElementById("noButton");
+    noButton.style.position = "relative";
+    noButton.style.left = Math.random() * 200 - 100 + "px";
+    noButton.style.top = Math.random() * 200 - 100 + "px";
+  }
+
+  function onYesClick() {
+    var message = document.getElementById("message");
+    var dollGif = document.getElementById("dollGif");
+    var yesButton = document.getElementById("yesButton");
+
+    message.innerHTML = "Yeh, Finally";
+    dollGif.src = "yes.gif";
+    yesButton.innerHTML = "Let's make plan";
+    yesButton.onclick = null; // Disable further clicks
+  }
+</script>
+
+</body>
+</html>
